@@ -13,7 +13,7 @@ const app = express()
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static('doctors'));
+app.use(express.static('creative'));
 app.use(fileUpload())
 
 const port = 5000;
@@ -33,7 +33,6 @@ client.connect(err => {
 
     app.post('/addServices', (req, res) => {
         const file = req.files.file;
-        // const name = req.body.name;
         const email = req.body.email;
         const service = req.body.service;
         const project = req.body.project;
@@ -144,9 +143,6 @@ client.connect(err => {
                 res.send(documents);
             })
     });
-
-
-
 
 
 });
